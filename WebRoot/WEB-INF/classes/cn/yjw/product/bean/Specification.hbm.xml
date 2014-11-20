@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.Specification" table="yjw_specification" lazy="true">
+		<id name="id" type="long" column="sp_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="sp_name" />
+		<property name="type" type="integer" column="sp_type" />
+		<property name="memo" type="string" column="sp_memo" />
+		<property name="order" type="integer" column="sp_order" />
+		<property name="createTime" type="timestamp" column="sp_create_time" />
+		<property name="modifyTime" type="timestamp" column="sp_modify_time" />
+		
+		<!-- 设置商品规格与规格值间的一对多映射 -->
+		<bag name="spvs" cascade="none" inverse="true" lazy="extra" fetch="select" order-by="spv_order ASC">
+			<key column="spv_sp_id" />
+			<one-to-many class="cn.yjw.product.bean.SpecificationValue" />
+		</bag>
+		
+		<!-- 设置商品规格与商品的多对多映射 -->
+		<bag name="products" table="yjw_product_specification"  cascade="none" inverse="true" 
+				lazy="extra" fetch="select">
+			<key column="psp_sp_id" />
+			<many-to-many column="psp_p_id" class="cn.yjw.product.bean.Product" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

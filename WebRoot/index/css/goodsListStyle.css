@@ -1,0 +1,609 @@
+@CHARSET "UTF-8";
+
+/*------------------------------ goods-main ------------------------------*/
+.goodsMain {
+	overflow: hidden;
+}
+
+.goodsMain .left {
+	width: 200px;
+	float: left;
+}
+
+.goodsMain .right {
+	width: 790px;
+	float: right;
+}
+
+/*------------------------------ goods-main-left ------------------------------*/
+.goodsMain .subCat {
+	overflow: hidden;
+	border-color: #999999 #DDDDDD #DDDDDD;
+	border-style: solid;
+	border-width: 2px 1px 1px;
+	margin-bottom: 10px;
+}
+
+.goodsMain .subCat .item {}
+
+.goodsMain .subCat .item h3 {
+	background-color: #F4F4F4;
+	border-top: 1px solid #DDDDDD;
+	cursor: pointer;
+	font: 14px/30px "microsoft yahei";
+	height: 30px;
+	padding: 0 7px 0 10px;
+}
+
+.goodsMain .subCat .item b {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	background-image: url("../images/icons/sort_icon.png");
+	background-position: -21px 0;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	float: left;
+	margin: 7px 8px 0 0;
+	overflow: hidden;
+}
+
+.goodsMain .subCat .current {}
+
+.goodsMain .subCat .current b {
+	background-position: -38px 0;
+}
+
+.goodsMain .subCat .item ul {
+	border-top: 1px solid #DDDDDD;
+	overflow: hidden;
+	padding: 6px 0;
+	list-style: none outside none;
+	display: none;
+}
+
+.goodsMain .subCat .current ul {
+	display: block;
+}
+
+.goodsMain .subCat .item li {
+	height: 18px;
+	padding: 3px 15px 3px 35px;
+	overflow: hidden;
+}
+
+.goodsMain .recommend {}
+
+.goodsMain .recommend .title h2 {
+	font: 15px/16px "microsoft yahei";
+}
+
+.goodsMain .recommend .content {
+	padding: 10px 8px;
+	overflow: hidden;
+}
+
+.goodsMain .recommend ul {
+	overflow: hidden;
+	list-style: none outside none;
+}
+
+.goodsMain .recommend li {
+	padding: 20px 0;
+	text-align: center;
+	border-top: 1px dotted #DDDDDD;
+}
+
+.goodsMain .recommend .noBorder {
+	border-top: 0 none;
+}
+
+.goodsMain .recommend .p-img {
+	overflow: hidden;
+}
+
+.goodsMain .recommend .p-name {
+	overflow: hidden;
+	padding: 7px 3px 0;
+}
+
+.goodsMain .recommend .p-price {
+	overflow: hidden;
+}
+
+.goodsMain .recommend .p-price strong {
+	color: #E4393C;
+	font-family: verdana;
+}
+
+/*------------------------------ goods-main-right ------------------------------*/
+/*---------- goods-main-hotsale ----------*/
+.goodsMain .hotSale {}
+
+.goodsMain .hotSale .title h2 {
+	font: 15px/16px "microsoft yahei";
+}
+
+.goodsMain .hotSale .content {
+	overflow: hidden;
+	padding: 10px 11px 10px 12px;
+}
+
+.goodsMain .hotSale .content dl {
+	width: 245px;
+	height: 100px;
+	padding: 0 5px;
+	float: left;
+}
+
+.goodsMain .hotSale .content dt {
+	width: 120px;
+	height: 80px;
+	padding: 10px 0;
+	float: left;
+}
+
+.goodsMain .hotSale .content dd {
+	width: 120px;
+	height: 80px;
+	padding: 10px 0 10px 5px;
+	float: left;
+}
+
+.goodsMain .hotSale .p-name {
+	height: 30px;
+	line-height: 15px;
+	overflow: hidden;
+}
+
+.goodsMain .hotSale .p-price {
+	height: 20px;
+	line-height: 20px;
+	color: #999999;
+	overflow: hidden;
+}
+
+.goodsMain .hotSale .p-price strong {
+	font-family: verdana;
+	color: #E4393C;
+}
+
+.goodsMain .hotSale .p-btn {
+	height: 25px;
+	margin-top: 5px;
+}
+
+.goodsMain .hotSale .p-btn a {
+	width: 72px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #FFFFFF;
+	background: none repeat scroll 0 0 #E4393C;
+	border-radius: 3px;
+	cursor: pointer;
+	display: block;
+}
+
+.goodsMain .hotSale .p-btn a:hover {
+	text-decoration: none;
+}
+
+/*---------- goods-main-select ----------*/
+.goodsMain .select {}
+
+.goodsMain .select .title h2 {
+	font: 15px/16px "microsoft yahei";
+	color: #E4393C;
+}
+
+.goodsMain .select .title h2 span {
+	font: 500 15px/16px "microsoft yahei";
+	color: #333333;
+}
+
+.goodsMain .select .content {
+	overflow: hidden;
+}
+
+.goodsMain .select .p-attr {
+	border-top: 1px dotted #CCCCCC;
+	overflow: hidden;
+	padding: 5px 0;
+}
+
+.goodsMain .select .noBorder {
+	border-top: 0 none;
+}
+
+.goodsMain .select .p-attr-key {
+	float: left;
+	font-weight: bold;
+	line-height: 25px;
+	text-align: right;
+	width: 80px;
+}
+
+.goodsMain .select .p-attr-values {
+	float: right;
+	width: 708px;
+}
+
+.goodsMain .select .p-attr-values ul {
+	list-style: none outside none;
+	overflow: hidden;
+	padding: 0 5px;
+}
+
+.goodsMain .select .p-attr-values li {
+	float: left;
+	height: 16px;
+	padding: 4px 15px 7px 0;
+}
+
+.goodsMain .select .p-attr-values li a {
+	display: inline-block;
+	line-height: 16px;
+	padding: 0 3px;
+	color: #005AA0;
+}
+
+.goodsMain .select .p-attr-values li a.current, .goodsMain .select .p-attr-values li a:hover {
+	background: none repeat scroll 0 0 #E4393C;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+/*---------- goods-main-sort ----------*/
+.goodsMain .sort {
+	background: none repeat scroll 0 0 #F4F4F4;
+	border: 1px solid #DDDDDD;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+	margin-bottom: 10px;
+	height: 30px;
+	overflow: hidden;
+	padding: 5px 8px;
+}
+
+.goodsMain .sort .order, .goodsMain .sort .order dt, .goodsMain .sort .order dd {
+	float: left;
+	line-height: 30px;
+}
+
+.goodsMain .sort .order dd {
+	background-color: #FFFFFF;
+	border: 1px solid #CECBCE;
+	height: 24px;
+	line-height: 24px;
+	margin: 2px 5px 2px 0px;
+	overflow: hidden;
+	position: relative;
+}
+
+.goodsMain .sort .order b {
+	width: 10px;
+	height: 11px;
+	font-size: 0;
+	background-image: url("../images/icons/sort_icon.png");
+	background-repeat: no-repeat;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	top: 7px;
+	left: 40px;
+}
+
+.goodsMain .sort .order .up b {
+	display: block;
+	background-position: 0 -12px;
+}
+
+.goodsMain .sort .order .down b {
+	display: block;
+	background-position: 0 0;
+	
+}
+
+.goodsMain .sort .order .curr {
+	background: none repeat scroll 0 0 #E4393C;
+	border: 1px solid #E4393C;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+.goodsMain .sort .order dd a {
+	display: block;
+	padding: 0 10px;
+}
+
+.goodsMain .sort .order .curr a {
+	color: #FFFFFF;
+}
+
+.goodsMain .sort .total {
+	height: 22px;
+	line-height: 22px;
+	color: #E4393C;
+	font-family: verdana;
+	border-right: 1px solid #E7E3E7;
+	padding: 2px 15px 2px 0;
+	margin: 2px 0;
+	float: right;
+}
+
+.goodsMain .sort .page {
+	border-left: 1px solid #FFFFFF;
+	float: right;
+	height: 22px;
+	padding: 2px 0;
+	margin: 2px 0;
+}
+
+.goodsMain .sort .page span, .goodsMain .sort .page a {
+	height: 14px;
+	font: 12px/14px verdana;
+	float: left;
+	overflow: hidden;
+}
+
+.goodsMain .sort .page .text {
+	padding: 4px 11px;
+}
+
+.goodsMain .sort .page .text i {
+	color: #E4393C;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.goodsMain .sort .page a:hover {
+	background-color: #005AA0;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.goodsMain .sort .page .prev, .goodsMain .sort .page .next {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 3px;
+	color: #CCCCCC;
+	cursor: default;
+	position: relative;
+	border: 1px solid #CCCCCC;
+	font-family: arial;
+	margin-left: 2px;
+}
+
+.goodsMain .sort .page .prev {
+	padding: 3px 10px 3px 12px;
+}
+
+.goodsMain .sort .page .next {
+	padding: 3px 12px 3px 10px;
+}
+
+.goodsMain .sort .page .prev b, .goodsMain .sort .page .next b {
+	width: 5px;
+	height: 9px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 5px;
+	background-image: url("../images/icons/page_icon.gif");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.goodsMain .sort .page .prev b {
+	background-position: -18px 0;
+	left: 3px;
+}
+
+.goodsMain .sort .page .next b {
+	background-position: -12px 0;
+	right: 3px;
+}
+
+.goodsMain .sort .page .prev-able, .goodsMain .sort .page .next-able {
+	color: #005AA0;
+	cursor: pointer;
+}
+
+.goodsMain .sort .page .prev-able b {
+	background-position: -6px 0;
+}
+
+.goodsMain .sort .page .next-able b {
+	background-position: 0 0;
+}
+
+/*---------- goods-main-plist ----------*/
+.goodsMain .plist {
+	overflow: hidden;
+}
+
+.goodsMain .plist .list-all {
+	list-style: none outside none;
+	clear: both;
+	content: " ";
+	margin-right: -11px;
+	width: 801px;
+}
+
+.goodsMain .plist li {
+	width: 246px;
+	height: 236px;
+	position: relative;
+	float: left;
+	margin: 5px 8px 15px 0;
+	padding: 5px;
+	border: 1px solid #FFFFFF;
+}
+
+.goodsMain .plist li:hover {
+	border-color: #D9D9D9;
+	box-shadow: 1px 1px 2px #E1E1E1;
+}
+
+.goodsMain .plist li .img {
+	width: 244px;
+	height: 164px;
+	border: 1px solid #E4E4E4;
+	overflow: hidden;
+}
+
+.goodsMain .plist li .info {
+	overflow: hidden;
+	height: 60px;
+	padding: 5px;
+}
+
+.goodsMain .plist .info .goods-num {
+	height: 20px;
+	font: normal 12px/20px Arial,"宋体";
+	overflow: hidden;
+}
+
+.goodsMain .plist .info .goods-num .price-n {
+	color: #E4393C;
+	font: bold 14px/20px verdana;
+}
+
+.goodsMain .plist .info .goods-num .price-o {
+	color: #999999;
+}
+
+.goodsMain .plist .info .goods-num .sell-num {
+	color: #E4393C;
+}
+
+.goodsMain .plist .info .goods-name {
+	height: 36px;
+	font: normal 12px/18px Arial,"宋体";
+	overflow: hidden;
+	padding-top: 4px;
+}
+
+/*---------- goods-main-plist ----------*/
+.goodsMain .pagePanel {
+	margin: 20px 0 10px 0;
+	overflow: hidden;
+}
+
+.goodsMain .pagePanel .page {
+	float: right;
+}
+
+.goodsMain .pagePanel a, .goodsMain .pagePanel span {
+	height: 20px;
+	font: normal 14px/20px Arial,"宋体";
+	border-radius: 3px;
+	overflow: hidden;
+	margin-left: 2px;
+	float: left;
+	border: 1px solid #CCCCCC;
+	padding: 3px 10px;
+}
+
+.goodsMain .pagePanel a {
+	color: #005AA0;
+}
+
+.goodsMain .pagePanel .text, .goodsMain .pagePanel .current {
+	font-family: verdana;
+	padding: 4px 11px;
+	border: 0 none;
+}
+
+.goodsMain .pagePanel .current {
+	color: #FF6600;
+	font-weight: 700;
+}
+
+.goodsMain .pagePanel a:hover {
+	background-color: #005AA0;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.goodsMain .pagePanel .prev, .goodsMain .pagePanel .next {
+	height: 18px;
+	line-height: 18px;
+	position: relative;
+}
+
+.goodsMain .pagePanel .prev {
+	padding: 5px 10px 3px 12px;
+}
+
+.goodsMain .pagePanel .next {
+	padding: 5px 12px 3px 10px;
+}
+
+.goodsMain .pagePanel .prev-disabled, .goodsMain .pagePanel .next-disabled {
+	color: #CCCCCC;
+	cursor: default;
+}
+
+.goodsMain .pagePanel .prev b, .goodsMain .pagePanel .next b {
+	width: 5px;
+	height: 9px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 9px;
+	background-image: url("../images/icons/page_icon.gif");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.goodsMain .pagePanel .prev b {
+	left: 3px;
+	background-position: -6px 0;
+}
+
+.goodsMain .pagePanel .next b {
+	right: 3px;
+	background-position: 0 0;
+}
+
+.goodsMain .pagePanel .prev-disabled b {
+	background-position: -18px 0;	
+}
+
+.goodsMain .pagePanel .next-disabled b {
+	background-position: -12px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

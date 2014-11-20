@@ -1,0 +1,281 @@
+@CHARSET "UTF-8";
+
+/*----------------------promotion--------------------------*/
+.promotion {
+	overflow: hidden;
+}
+
+.advertise {
+	width: 230px;
+	float: left;
+}
+
+.advertise .imgAd {
+	height: 100px;
+	border: 1px solid #DDDDDD;
+	overflow: hidden;
+}
+
+.article {
+	height: 231px;
+	margin-top: 10px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.article .tab {
+	height: 32px;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+.article .tab li {
+	height: 30px;
+	font: normal 14px/30px "microsoft yahei";
+	text-align: center;
+	background: none repeat scroll 0 0 #F4F4F4;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	float: left;
+	overflow: hidden;
+}
+
+.article .tab li.current {
+	border-bottom: 0 none;
+	border-top: 2px solid #E4393C;
+	font-weight: bold;
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.article .tab li a:hover {
+	text-decoration: none;
+}
+
+.article .tabContent {
+	height: 175px;
+	padding: 12px 20px;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+.article .tabContent li {
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;
+}
+
+.recommend {
+	width: 763px;
+	float: left;
+	padding-left: 7px;
+}
+
+.recommend .panel {
+	height: 342px;
+	overflow: hidden;
+	border: 1px solid #DDDDDD;
+	background: none repeat scroll 0 0 #F4F4F4;
+}
+
+.recommend .rcmdTitle, .recommend .brandTitle {
+	height: 16px;
+	padding: 7px 0 8px 15px;
+}
+
+.recommend .brandTitle {
+	border-top: 0px dotted #DDDDDD;
+}
+
+.recommend span.t-name {
+	height: 16px;
+	font: 500 15px/16px "microsoft yahei";
+	color: #E4393C;
+	display: block;
+	float: left;
+}
+
+.recommend .rcmdContent {
+	padding: 0 12px 3px 12px;
+}
+
+.recommend .rcmdContent .rg-list {
+	height: 212px;
+	background: none repeat scroll 0 0 #FFFFFF;
+	overflow: hidden;
+}
+
+.recommend .rg-list ul {
+	width: 738px;
+	margin-right: -1px;
+}
+
+.recommend .rg-list li {
+	width: 245px;
+	height: 189px;
+	padding: 12px 0 11px 0;
+	text-align: center;
+	border-right: 1px solid #F4F4F4;
+	float: left;
+}
+
+.recommend .rg-list .rg-img, .recommend .rg-list .rg-name, .recommend .rg-list .rg-price {
+	overflow: hidden;
+}
+
+.recommend .rg-list .rg-img img {
+	width: 221px;
+	height: 148px;
+}
+
+.recommend .rg-list .rg-name {
+	padding: 5px 15px 0;
+	height: 18px;
+}
+
+.recommend .rg-list .rg-price {
+	height: 18px;
+}
+
+.recommend .rg-list .rg-price strong {
+	color: #E4393C;
+	font-family: verdana;
+}
+
+.recommend .brandContent {
+	padding: 0 12px 12px 12px;
+}
+
+.recommend .brandContent ul {
+	height: 52px;
+	overflow: hidden;
+}
+
+.recommend .brandContent li {
+	background-color: #FFFFFF;
+	border: 1px solid #E4E4E4;
+	float: left;
+	margin-botton: -1px;
+	margin-right: -1px;
+}
+
+.recommend .brandContent li:hover {
+	border-bottom-color: #000000;
+}
+
+.recommend .brandContent li img {
+	width: 91px;
+	height: 50px;
+}
+
+/*----------------------goodsTabs--------------------------*/
+.goodsPanel {
+	margin-top: 15px;
+}
+
+.goodsPanel .title{
+	height: 40px;
+	padding-bottom: 6px;
+	overflow: hidden;
+}
+
+.goodsPanel .leftTitle {
+	width: 230px;
+	height: 40px;
+	float: left;
+	overflow: hidden;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: url("../images/icons/goods_bar.png");
+}
+
+.goodsPanel .leftTitle span {
+	color: #FFFFFF;
+	display: block;
+	font: bold 15px/38px "microsoft yahei";
+	float: left;
+	padding-left: 15px;
+}
+
+.goodsPanel .leftTitle a {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: right;
+}
+
+.goodsPanel .tab {
+	width: 770px;
+	height: 40px;
+	float: left;
+	overflow: hidden;
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: url("../images/icons/goods_bar.png");
+	list-style-type: none;
+}
+
+.goodsPanel .tab li {
+	width: 120px;
+	height: 36px;
+	font: normal 14px/36px "microsoft yahei";
+	text-align: center;
+	border-right: 1px solid #DDDDDD;
+	margin-top: 2px;
+	float: left;
+	overflow: hidden;
+}
+
+.goodsPanel .tab li.current {
+	background-color: #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	font-weight: bold;
+}
+
+.goodsPanel .tab a:hover {
+	text-decoration: none;
+}
+
+.goodsPanel .content {
+	height: 343px;
+	overflow: hidden;
+}
+
+.goodsPanel .goodsAd {
+	width: 230px;
+	float: left;
+}
+
+.goodsPanel .goodsAd img {
+	width: 230px;
+	height: 343px;
+	image-rendering: optimizequality;
+}
+
+.goodsPanel .goodsList {
+	width: 763px;
+	height: 343px;
+	float: left;
+	padding-left: 7px;
+	list-style-type: none;
+}
+
+.goodsPanel .goodsList li {
+	border: 1px solid #E4E4E4;
+	float: left;
+	margin-bottom: -1px;
+	margin-right: -1px;
+}
+
+.goodsPanel .goodsList li:hover {
+	opacity: 0.7
+}
+
+.goodsPanel .goodsList img {
+	width: 253px;
+	height: 170px;
+	image-rendering: optimizequality;
+}
+

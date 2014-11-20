@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+div.login {
+	background: url("../images/login.png") no-repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+	height: 302px;
+	margin: 60px auto 0;
+	overflow: hidden;
+	padding: 110px 160px 0;
+	width: 520px;
+}
+
+div.login table {
+	height: 220px;
+	width: 520px;
+}
+
+div.login th {
+	font-weight: normal;
+	height: 30px;
+	padding-right: 6px;
+	text-align: right;
+}
+
+div.login .captcha {
+	ime-mode: disabled;
+	text-transform: uppercase;
+	width: 90px;
+}
+
+div.login .captchaImage {
+	cursor: pointer;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+div.login .homeButton {
+	background: url("../images/login.png") no-repeat scroll 0 -420px
+		rgba(0, 0, 0, 0);
+	border: medium none;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	width: 37px;
+}
+
+div.login .loginButton {
+	background: url("../images/login.png") no-repeat scroll -37px -420px
+		rgba(0, 0, 0, 0);
+	border: medium none;
+	color: #476B89;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	width: 70px;
+}
+
+div.login .powered {
+	color: #999999;
+	font-size: 9px;
+	height: 30px;
+	line-height: 30px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+div.login .link {
+	color: #888888;
+	height: 30px;
+	line-height: 30px;
+	padding-right: 7px;
+	text-align: right;
+}
+
+div.login .link a {
+	color: #888888;
+	margin: 0 3px;
+}
+
+fieldset {
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 3px 3px 3px;
+	line-height: 30px;
+	margin: 10px 20px;
+	padding: 0 10px;
+}
+
+fieldset strong {
+	font-weight: bold;
+}

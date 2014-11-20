@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>YJW-SHOP 管理中心</title>
+		<!-- 通知浏览器本页面的编码字符集 -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<!-- 设置浏览器端对本页面不开启缓存 -->
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<!-- 设置本页面的超时时间为0（加载后立即超时） -->
+		<meta http-equiv="expires" content="0" />
+		<!-- 设置关键词 -->
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<!-- 设置页面描述信息 -->
+		<meta http-equiv="description" content="This is my page" />
+		<!-- 设置版权信息 -->
+		<meta content="yjwShop Team" name="author" />
+		<meta content="yjwShop" name="copyright" />
+		
+		<!-- 引入CSS文件 -->
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<link type="text/css" rel="stylesheet" href="css/login.css" />
+		
+		<!-- 引入JS文件 -->
+		<script type="text/javascript" src="js/jquery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="js/yjw/common.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+		var $loginForm = $("#loginForm");
+		var $enPassword = $("#enPassword");
+		var $username = $("#username");
+		var $password = $("#password");
+		var $captcha = $("#captcha");
+		var $captchaImage = $("#captchaImage");
+		var $isRememberUsername = $("#isRememberUsername");
+		// 记住用户名
+		if (getCookie("adminUsername") != null) {
+			$isRememberUsername.prop("checked", true);
+			$username.val(getCookie("adminUsername"));
+			$password.focus();
+		} else {
+			$isRememberUsername.prop("checked", false);
+			$username.focus();
+		}
+		// 更换验证码
+		$captchaImage.click(function() {
+			$captchaImage.attr("src"
+					,"/admin/common/captcha.jhtml?captchaId=911894d8-6404-4174-9d96-5e3aad6c80b1&timestamp=" 
+					+ (new Date()).valueOf());
+		});
+		// 表单验证、记住用户名
+		$loginForm.submit(function() {
+				if ($username.val() == "") {
+					$.message("warn", "请输入您的用户名");
+					return false;
+				}
+				if ($password.val() == "") {
+					$.message("warn", "请输入您的密码");
+					return false;
+				}
+				if ($captcha.val() == "") {
+					$.message("warn", "请输入您的验证码");
+					return false;
+				}
+				if ($isRememberUsername.prop("checked")) {
+					addCookie("adminUsername", $username.val(), {
+							expires : 7 * 24 * 60 * 60
+						});
+				} else {
+					removeCookie("adminUsername");
+				}
+				var rsaKey = new RSAKey();
+				rsaKey.setPublic(
+						b64tohex("AKVsuHtutTEfy6c0JBq/p1h1/mLLvHoRFrjglPoJqK7L50tXwfDozPz9GYIc7vKWmOTqyuMjogXgxI3LoRApDJqDKYpudNoHoXYb2LxbQ1ZZKkdvW/7gXPyGIb9ptT8/FFksvNixxz+9dpwOHLE4rg+7NcKDpBuj/VWdig0slpjP"),
+						b64tohex("AQAB"));
+				var enPassword = hex2b64(rsaKey.encrypt($password.val()));
+				$enPassword.val(enPassword);
+			});
+	});
+</script>
+	</head>
+
+	<body>
+		<div class="login">
+			<form id="loginForm" method="post" action="">
+				<table>
+					<tbody>
+						<tr>
+							<td width="190" valign="bottom" align="center" rowspan="2">
+								<img alt="SHOP++" src="images/login_logo.gif" />
+							</td>
+							<th>用户名:</th>
+							<td>
+								<input id="username" class="text" type="text" maxlength="20" name="username" />
+							</td>
+						</tr>
+						<tr>
+							<th>密　码:</th>
+							<td>
+								<input id="password" class="text" type="password" autocomplete="off" maxlength="20" />
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<th>验证码:</th>
+							<td>
+								<input id="captcha" class="text captcha" type="text" autocomplete="off" maxlength="4" name="captcha" />
+								<img id="captchaImage" class="captchaImage" title="点击更换验证码" src="/SHOPxx/admin/common/captcha.jhtml?captchaId=e145daf4-1a35-419f-823b-5572f27a0cc6&timestamp=1387113236635" />
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<th> </th>
+							<td>
+								<label>
+									<input id="isRememberUsername" type="checkbox" value="true" />
+									记住用户名
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<td> </td>
+							<th> </th>
+							<td>
+								<input class="homeButton" type="button" onclick="location.href='/SHOPxx/'" value="" /><input class="loginButton" type="submit" value="登录" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="powered">
+					COPYRIGHT © 2005-2013 YJW-SHOP.COM ALL RIGHTS RESERVED.
+				</div>
+				<div class="link">
+					<a href="http://www.baidu.com">前台首页</a> | 
+					<a href="http://www.baidu.com">官方网站</a> | 
+					<a href="http://www.baidu.com">交流论坛</a> | 
+					<a href="http://www.baidu.com">关于我们</a> | 
+					<a href="http://www.baidu.com">联系我们</a> | 
+					<a href="http://www.baidu.com">授权查询</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

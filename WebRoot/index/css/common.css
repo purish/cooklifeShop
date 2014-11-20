@@ -1,0 +1,534 @@
+@CHARSET "UTF-8";
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,
+s,samp,small,strike,strong,sub,sup,tt,var,dd,dl,dt,li,ol,ul,fieldset,form,
+label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+	border: 0 none;
+	margin: 0;
+	outline: 0 none;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	color: #666666;
+	font: 12px/150% Arial,Verdana,"宋体";
+}
+
+a {
+	color: #666666;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #E4393C;
+	text-decoration: underline;
+}
+
+img {
+	vertical-align: middle;
+}
+
+a img {
+	border: 0 none;
+}
+
+ol, ul {
+	list-style: none outside none;
+}
+
+.w {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.clearFix {
+	clear: both;
+}
+
+.hiddenOver {
+	overflow: hidden;
+}
+
+/*------------------------------ head ------------------------------*/
+
+/*----------- Logo & Search -----------*/
+.yjw_header {
+	background: none repeat scroll 0 0 #FFFFFF;
+	height: 105px;
+}
+
+.yjw_header .w .topMenu {
+	height: 25px;
+}
+
+.yjw_header .w .topPanel {
+	height: 60px;
+	padding: 10px 0;
+}
+
+.logo {
+	float: left;
+	width: 230px;
+	padding: 0 0 0 10px;
+}
+
+.search {
+	float: left;
+	width: 500px;
+	padding: 4px 20px 0 20px;
+}
+
+.searchInput{
+	width: 494px;
+	height: 30px;
+	border: 3px solid #E4393C;
+	margin-bottom: 3px;
+}
+
+.searchInput .form {
+	height: 30px;
+	overflow: hidden;
+}
+
+.searchInput .form input {
+	height: 30px;
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.searchInput .form .text {
+	width: 406px;
+	height: 20px;
+	background-color: #FFFFFF;
+	color: #999999;
+	font-family: Arial,Verdana,"宋体";
+	font-size: 14px;
+	line-height: 20px;
+	padding: 5px;
+}
+
+.searchInput .form .text:focus {
+	background-color: #FCFCFC;
+	box-shadow: 2px 2px 3px #D2D2D2 inset;
+}
+
+.searchInput .form .button {
+	background: none repeat scroll 0 0 #E4393C;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 600;
+	width: 78px;
+	cursor: pointer;
+}
+
+.hotWords {
+	color: #999999;
+	height: 18px;
+	overflow: hidden;
+}
+
+.hotWords strong {
+	font-size: 400;
+}
+
+.hotWords a:link,.hotWords a:visited {
+	color: #999999;
+	margin-right: 10px;
+}
+
+.hotWords a:hover {
+	color: #E4393C;
+}
+
+.telephone {
+	float: left;
+	width: 220px;
+	height: 60px;
+}
+/*----------- Navigation & Categorys -----------*/
+.yjw_nav {
+	background: none repeat scroll 0 0 #E4393C;
+	height: 42px;
+	position: relative;
+	z-index: 2;
+}
+
+.categorys {
+	width: 230px;
+	height: 42px;
+	float: left;
+}
+
+.categorys .panel {
+	position: relative;
+	z-index: 3;
+}
+
+.categorys .panel .allLinkPanel {
+	width: 230px;
+	height: 42px;
+	background: none repeat scroll 0 0 #CD2A2C;
+	cursor: default;
+	font-family: "microsoft yahei";
+	font-size: 15px;
+	font-weight: 600;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.categorys .allLinkPanel .allLink {
+	height: 42px;
+	line-height: 42px;
+	color: #FFFFFF;
+	padding-left: 20px;
+	display: block;
+}
+
+.categorys .allLinkPanel .allLink b {
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	top: 11px;
+	right: 10px;
+	background-image: url("../images/icons/shopping_icon.png");
+	background-position: -65px 0;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.categorys .box {
+	background: none repeat scroll 0 0 #FAFAFA;
+	border-color: #E4393C;
+	border-style: solid;
+	border-width: 0 2px 2px 2px;
+	padding: 3px 3px 3px 0;
+	overflow: visible;
+	width: 223px;
+	height: 338px;
+	position: absolute;
+	top: 42px;
+	left: 0;
+	z-index: 1;
+}
+
+.categorys .box .list {
+	
+}
+
+.categorys .list .displayPanel {
+	padding: 7px 15px 8px 20px;
+	border-bottom: 1px solid #EAEAEA;
+	height: 40px;
+}
+
+.categorys .list .displayPanel.hover {
+	padding: 7px 15px 7px 20px;
+	border-top: 1px solid #BCBCBC;
+	border-bottom: 1px solid #BCBCBC;
+	background: none repeat scroll 0 0 #FFFFFF;
+	position: relative;
+	z-index: 2;
+}
+
+.categorys .list .displayPanel dt {
+	height: 20px;
+	overflow: hidden;
+}
+
+.categorys .list .displayPanel dt strong {
+	height: 20px;
+	display: block;
+	float: left;
+}
+
+.categorys .list .displayPanel dt strong a {
+	color: #565656;
+	font: bold 14px/20px "microsoft yahei";
+}
+
+.categorys .list .displayPanel dt strong a:hover {
+	color: #E4393C;
+	text-decoration: underline;
+}
+
+.categorys .list .displayPanel dt span {
+	height: 20px;
+	color: #CCCCCC;
+	font: bold 12px/20px "宋体";
+	display: block;
+	float: right;
+}
+
+.categorys .list .displayPanel dd {
+	height: 18px;
+	margin-top: 2px;
+	overflow: hidden;
+}
+
+.categorys .list .displayPanel dd a {
+	color: #8D8D8D;
+	display: inline-block;
+	font: normal 12px/18px Arial,Verdana,"宋体";
+}
+
+.categorys .list .displayPanel dd a:hover {
+	color: #E4393C;
+	text-decoration: underline;
+}
+
+.categorys .list .hiddenPanel {
+	width: 600px;
+	height: 350px;
+	display: none;
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #BCBCBC;
+	box-shadow: 1px 1px 8px #999999;
+	left: 230px;
+	overflow: hidden;
+	position: absolute;
+	top: 3px;
+	left: 222px;
+	z-index: 1;
+}
+
+.categorys .list .hiddenPanel .subCat {
+	padding: 5px 15px;
+}
+
+.categorys .subCat .item {
+	border-top: 1px solid #E7E7E7;
+	padding: 10px 0 13px 0;
+}
+
+.categorys .subCat .noBorder {
+	border-top: 0 none;
+}
+
+.categorys .subCat .item .dt {
+	width: 70px;
+	font: bold 14px/25px "microsoft yahei";
+	float: left;
+}
+
+.categorys .subCat .item .dt a {
+	color: #E4393C;
+}
+
+.categorys .subCat .item .dd {
+	width: 490px;
+	font: normal 12px/25px Arial,Verdana,"宋体";
+	color: #E4E4E4;
+	margin-left: 10px;
+	float: left;
+	overflow: hidden;
+}
+
+.categorys .subCat .item .dd span {
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: break-word;
+}
+
+.navItems {
+	height: 42px;
+	width: 770px;
+	background-color: #E4393C;
+	list-style: none outside none;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	z-index: 2;
+}
+
+.navItems li {
+	width: 85px;
+	float: left;
+	text-align: center;
+}
+
+.navItems li a {
+	color: #FFFFFF;
+	font: 600 15px/42px "microsoft yahei";
+	width: 85px;
+	height: 42px;
+	display: block;
+}
+
+.navItems li a:hover {
+	text-decoration: none;
+}
+
+.navItems .hover {
+	background: none repeat scroll 0 0 #A40000;
+}
+
+.yjw_nav .shadow {
+	height: 5px;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 42px;
+	left: 0;
+	z-index: 2;
+	background-image: url("../images/icons/nav_shadow.png");
+	background-position: left top;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.yjw_slide {
+	width: 100%;
+	background: none repeat scroll 0 0 #FFFFFF;
+	overflow: hidden;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/*------------------------------ position ------------------------------*/
+.position {
+	font: normal 12px/150% "宋体";
+	padding: 10px 0;
+	color: #999999;
+}
+
+.position .icon {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url("../images/icons/home_icon.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.position span,.position strong,.position a {
+	vertical-align: middle;
+}
+
+.position a {
+	display: inline-block;
+	color: #333333;
+}
+
+.position a:hover {
+	color: #E4393C;
+	text-decoration: underline;
+}
+
+.cmnPanel {
+	border: 1px solid #DDDDDD;
+	margin-bottom: 10px;
+}
+
+.cmnPanel .title {
+	background: none repeat scroll 0 0 #F4F4F4;
+	height: 16px;
+	padding: 7px 0 8px 13px;
+	cursor: default;
+	overflow: hidden;
+}
+
+/*------------------------------ main ------------------------------*/
+.yjw_main {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin-top: 15px;
+}
+
+/*------------------------------foot------------------------------*/
+.yjw_foot {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin-top: 20px;
+}
+
+.footTable {
+	background: none repeat scroll 0 0 #F3F3F3;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+	padding: 25px 0 15px 0;
+}
+
+.footTable .menu {
+	width: 120px;
+	float: left;
+}
+
+.footTable .title {
+	height: 30px;
+	color: #666666;
+	font: 600 15px/30px "microsoft yahei";
+	overflow: hidden;
+}
+
+.footTable .item {
+	overflow: hidden;
+	font: normal 12px/25px Arial,Verdana,"宋体";
+	color: #666666;
+}
+
+.footTable .item a {
+	height: 25px;
+	display: block;
+	overflow: hidden;
+}
+
+.footTable .line {
+	height: 130px;
+	margin: 0 35px 0 3px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #FFFFFF;
+	float: left;
+}
+
+.footTable .tel {
+	height: 100px;
+	float: right;
+}
+
+.footTable .tel .number {
+	font: 700 20px/30px Arial,Verdana,"宋体";
+	color: #E4393C;
+}
+
+.footIcon {
+	padding: 20px 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.footIcon .panel {
+	height: 32px;
+	overflow: hidden;
+}
+
+.footIcon .panel .icon {
+	height: 32px;
+	width: 117px;
+	padding: 0 40px 0 43px;
+	float: left;
+}
+
+.footCopy {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.footCopy .links {
+	overflow: hidden;	
+}
+
+.footCopy .copyright {
+	margin: 10px 0;
+}
+
+.footCopy .authentication {
+	
+}
+

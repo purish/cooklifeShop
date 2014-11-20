@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.Product" table="yjw_product" lazy="true">
+		<id name="id" type="long" column="p_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="p_name" />
+		<property name="sn" type="string" column="p_sn" />
+		<property name="price" type="double" column="p_price" />
+		<property name="cost" type="double" column="p_cost" />
+		<property name="marketPrice" type="double" column="p_market_price" />
+		<property name="image" type="string" column="p_image" />
+		<property name="unit" type="string" column="p_unit" />
+		<property name="weight" type="integer" column="p_weight" />
+		<property name="stock" type="integer" column="p_stock" />
+		<property name="stockMemo" type="string" column="p_stock_memo" />
+		<property name="order" type="integer" column="p_order" />
+		<property name="memo" type="string" column="p_memo" />
+		<property name="keyword" type="string" column="p_keyword" />
+		<property name="seoTitle" type="string" column="p_seo_title" />
+		<property name="seoKeywords" type="string" column="p_seo_keywords" />
+		<property name="seoDescription" type="string" column="p_seo_description" />
+		<property name="introduction" type="string" column="p_introduction" />
+		<property name="isHot" type="boolean" column="p_is_hot" />
+		<property name="isNew" type="boolean" column="p_is_new" />
+		<property name="isRecmd" type="boolean" column="p_is_recmd" />
+		<property name="isMarketable" type="boolean" column="p_is_marketable" />
+		<property name="isList" type="boolean" column="p_is_list" />
+		<property name="isTop" type="boolean" column="p_is_top" />
+		<property name="isGift" type="boolean" column="p_is_gift" />
+		<property name="createTime" type="timestamp" column="p_create_time" />
+		<property name="modifyTime" type="timestamp" column="p_modify_time" />
+		
+		<!-- 设置商品与商品分类多对一映射 -->
+		<many-to-one name="pc" column="p_pc_id" lazy="proxy" fetch="select" 
+				class="cn.yjw.product.bean.ProductCategory" 
+				cascade="none" />
+		
+		<!-- 设置商品与品牌多对一映射 -->
+		<many-to-one name="brand" column="p_brand_id" lazy="proxy" fetch="select" 
+				class="cn.yjw.product.bean.Brand" 
+				cascade="none" />
+		
+		<!-- 设置商品与商品图片一对多映射 -->
+		<bag name="pimgs" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="pimg_p_id" />
+			<one-to-many class="cn.yjw.product.bean.ProductImage" />
+		</bag>
+		
+		<!-- 设置商品与规格的多对多映射 -->
+		<bag name="sps" table="yjw_product_specification"  cascade="none" inverse="false" 
+				lazy="extra" fetch="select">
+			<key column="psp_p_id" />
+			<many-to-many column="psp_sp_id" class="cn.yjw.product.bean.Specification" />
+		</bag>
+		
+		<!-- 设置商品与子商品的一对多映射 -->
+		<bag name="psubs" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="psub_p_id" />
+			<one-to-many class="cn.yjw.product.bean.ProductSub" />
+		</bag>
+		
+		<!-- 设置商品与参数值的多对多映射 -->
+		<bag name="ppitems" table="yjw_product_parameter_item_value" cascade="none" inverse="false" 
+				lazy="extra" fetch="select">
+			<key column="ppitem_p_id" />
+			<composite-element class="cn.yjw.product.bean.ProductParamItemValue">
+				<parent name="product" />
+				<many-to-one name="pitem" column="ppitem_pitem_id" lazy="proxy" fetch="select" 
+						class="cn.yjw.product.bean.ParameterItem" 
+						cascade="none" />
+				<property name="value" type="string" column="ppitem_value" />
+			</composite-element>
+		</bag>
+		
+		<!-- 设置商品与属性值的多对多映射 -->
+		<bag name="atopts" table="yjw_product_attribute_option" cascade="none" inverse="false" 
+				lazy="extra" fetch="select">
+			<key column="patopt_p_id" />
+			<many-to-many column="patopt_atopt_id" class="cn.yjw.product.bean.AttributeOption" />
+		</bag>
+		
+		
+	</class>
+</hibernate-mapping>

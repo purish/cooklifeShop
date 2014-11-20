@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.aop-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.asm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.beans-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.context-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.core-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.expression-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.jdbc-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.orm-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.transaction-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring/org.springframework.web-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/CKFinder-2.3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/CKFinderPlugin-FileEditor-2.3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/CKFinderPlugin-ImageResize-2.3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/ckeditor-java-core-3.5.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/mail-1.4.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ckeditor/thumbnailator-0.4.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib/ezmorph-1.0.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib/json-lib-2.1-jdk15.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/hibernate3.jar" sourcepath="D:/yangjunwei/Java/WorkSpace/Resources/Source/hibernate-distribution-3.6.10.Final/project"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2/freemarker-2.3.16.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2/ognl-3.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2/struts2-core-2.2.1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2/struts2-spring-plugin-2.2.1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts2/xwork-core-2.2.1.1.jar" sourcepath="D:/yangjunwei/Java/WorkSpace/Resources/Source/struts-2.2.1.1/src"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/com.springsource.net.sf.cglib-2.2.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/com.springsource.org.aspectj.tools-1.6.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/commons-pool-1.5.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/common/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

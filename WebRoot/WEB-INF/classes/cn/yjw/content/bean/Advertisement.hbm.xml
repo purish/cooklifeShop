@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.content.bean.Advertisement" table="yjw_advertisement" lazy="true">
+		<id name="id" type="long" column="ad_id">
+			<generator class="native" />
+		</id>
+		<property name="title" type="string" column="ad_title" />
+		<property name="type" type="integer" column="ad_type" />
+		<property name="image" type="string" column="ad_image" />
+		<property name="content" type="string" column="ad_content" />
+		<property name="url" type="string" column="ad_url" />
+		<property name="position" type="integer" column="ad_position" />
+		<property name="memo" type="string" column="ad_memo" />
+		<property name="order" type="integer" column="ad_order" />
+		<property name="createTime" type="timestamp" column="ad_create_time" />
+		<property name="modifyTime" type="timestamp" column="ad_modify_time" />
+		
+	</class>
+</hibernate-mapping>

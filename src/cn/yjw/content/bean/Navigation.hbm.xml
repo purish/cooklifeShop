@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.content.bean.Navigation" table="yjw_navigation" lazy="true">
+		<id name="id" type="long" column="nav_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="nav_name" />
+		<property name="position" type="integer" column="nav_position" />
+		<property name="url" type="string" column="nav_url" />
+		<property name="memo" type="string" column="nav_memo" />
+		<property name="order" type="integer" column="nav_order" />
+		<property name="isBlank" type="boolean" column="nav_is_blank" />
+		<property name="createTime" type="timestamp" column="nav_create_time" />
+		<property name="modifyTime" type="timestamp" column="nav_modify_time" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.content.bean.ArticleCategory" table="yjw_article_category" lazy="true">
+		<id name="id" type="long" column="ac_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="ac_name" />
+		<property name="grade" type="integer" column="ac_grade" />
+		<property name="seoTitle" type="string" column="ac_seo_title" />
+		<property name="seoKeywords" type="string" column="ac_seo_keywords" />
+		<property name="seoDescription" type="string" column="ac_seo_description" />
+		<property name="order" type="integer" column="ac_order" />
+		<property name="treePath" type="string" column="ac_tree_path" />
+		<property name="createTime" type="timestamp" column="ac_create_time" />
+		<property name="modifyTime" type="timestamp" column="ac_modify_time" />
+		
+		<!-- 设置商品分类自关联一对多映射 -->
+		<bag name="childs" cascade="none" inverse="true" lazy="extra" fetch="select" order-by="ac_order ASC">
+			<key column="ac_parent_id" />
+			<one-to-many class="cn.yjw.content.bean.ArticleCategory" />
+		</bag>
+		
+		<!-- 设置商品分类自关联多对一映射 -->
+		<many-to-one name="parent" column="ac_parent_id" 
+				class="cn.yjw.content.bean.ArticleCategory" 
+				cascade="none" lazy="proxy" fetch="select" />
+				
+		<!-- 设置商品分类与商品的一对多映射 -->
+		<bag name="articles" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="a_ac_id" />
+			<one-to-many class="cn.yjw.content.bean.Article" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

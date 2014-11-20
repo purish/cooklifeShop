@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.ParameterItem" table="yjw_parameter_item" lazy="true">
+		<id name="id" type="long" column="pitem_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="pitem_name" />
+		<property name="order" type="integer" column="pitem_order" />
+		<property name="createTime" type="timestamp" column="pitem_create_time" />
+		<property name="modifyTime" type="timestamp" column="pitem_modify_time" />
+		
+		<!-- 设置参数项与参数间的多对一映射关系 -->
+		<many-to-one name="param" column="pitem_param_id" lazy="proxy" fetch="select"
+				class="cn.yjw.product.bean.Parameter" 
+				cascade="none" />
+				
+		<!-- 设置参数项与商品间的多对多映射关系 -->
+		<bag name="ppitems" table="yjw_product_parameter_item_value" cascade="none" inverse="true" 
+				lazy="extra" fetch="select">
+			<key column="ppitem_pitem_id" />
+			<composite-element class="cn.yjw.product.bean.ProductParamItemValue">
+				<parent name="pitem" />
+				<many-to-one name="product" column="ppitem_p_id" lazy="proxy" fetch="select" 
+						class="cn.yjw.product.bean.Product" 
+						cascade="none" />
+				<property name="value" type="string" column="ppitem_value" />
+			</composite-element>
+		</bag>
+		
+	</class>
+</hibernate-mapping>

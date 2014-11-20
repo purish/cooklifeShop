@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>YJW-SHOP 管理中心</title>
+		<!-- 通知浏览器本页面的编码字符集 -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<!-- 设置浏览器端对本页面不开启缓存 -->
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<!-- 设置本页面的超时时间为0（加载后立即超时） -->
+		<meta http-equiv="expires" content="0" />
+		<!-- 设置关键词 -->
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<!-- 设置页面描述信息 -->
+		<meta http-equiv="description" content="This is my page" />
+		<!-- 设置版权信息 -->
+		<meta content="yjwShop Team" name="author" />
+		<meta content="yjwShop" name="copyright" />
+
+		<!-- 引入CSS文件 -->
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+
+		<!-- 引入JS文件 -->
+		<script type="text/javascript" src="js/jquery/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+	var $nav = $("#nav a:not(:last)");
+	var $menu = $("#menu dl");
+	var $menuItem = $("#menu a");
+	$nav.click(function() {
+		var $this = $(this);
+		$nav.removeClass("current");
+		$this.addClass("current");
+		var $currentMenu = $($this.attr("href"));
+		$menu.hide();
+		$currentMenu.show();
+		return false;
+	});
+	$menuItem.click(function() {
+		var $this = $(this);
+		$menuItem.removeClass("current");
+		$this.addClass("current");
+	});
+});
+</script>
+	</head>
+
+	<body>
+	<script type="text/javascript">
+		if (self != top) {
+			top.location = self.location;
+		};
+	</script>
+		<table class="main">
+			<tbody>
+				<tr>
+					<th class="logo">
+						<a href="#">
+							<img alt="SHOP++" src="images/YJW-SHOP.png" style="width: 160px;" />
+						</a>
+					</th>
+					<th>
+						<div id="nav" class="nav">
+							<ul>
+								<li><a href="#product">商品</a></li>
+								<li><a href="#order">订单</a></li>
+								<li><a href="#member">会员</a></li>
+								<li><a href="#content">内容</a></li>
+								<li><a href="#marketing">营销</a></li>
+								<li><a href="#statistics">统计</a></li>
+								<li><a href="#system">系统</a></li>
+								<li><a target="_blank" href="/SHOPxx/">首页</a></li>
+							</ul>
+						</div>
+						<div class="link">
+							<a target="_blank" href="http://www.shopxx.net">官方网站</a> | 
+							<a target="_blank" href="http://bbs.shopxx.net">交流论坛</a> | 
+							<a target="_blank" href="http://www.shopxx.net/about.html">关于我们</a>
+						</div>
+						<div class="link">
+							<strong>admin</strong> 您好!
+							<a target="iframe" href="../profile/edit.jhtml">[账号设置]</a>
+							<a target="_top" href="../logout.jsp">[注销]</a>
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<td id="menu" class="menu">
+						<dl id="product" class="default">
+							<dt>商品管理</dt>
+							<dd><a target="iframe" href="yjwProduct/productAction_getProductsByCondition.action">商品管理</a></dd>
+							<dd><a target="iframe" href="yjwProduct/pcAction_getProductCategorysByCondition.action">商品分类</a></dd>
+							<dd><a target="iframe" href="yjwProduct/paramAction_getParametersByCondition.action">商品参数</a></dd>
+							<dd><a target="iframe" href="yjwProduct/attrAction_getAttributesByCondition.action">商品属性</a></dd>
+							<dd><a target="iframe" href="yjwProduct/spAction_getSpecificationsByCondition.action">规格管理</a></dd>
+							<dd><a target="iframe" href="yjwProduct/brandAction_getBrandsByCondition.action">品牌管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">到货通知</a></dd>
+						</dl>
+						<dl id="order">
+							<dt>订单管理</dt>
+							<dd><a target="iframe" href="http://www.baidu.com">订单管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">收款管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">退款管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">发货管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">退货管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">发货点管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">快递单模板</a></dd>
+						</dl>
+						<dl id="member">
+							<dt>会员管理</dt>
+							<dd><a target="iframe" href="http://www.baidu.com">会员管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">会员等级</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">会员注册项</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">评论管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">咨询管理</a></dd>
+						</dl>
+						<dl id="content">
+							<dt>内容管理</dt>
+							<dd><a target="iframe" href="yjwContent/navAction_getNavigationsByCondition.action">导航管理</a></dd>
+							<dd><a target="iframe" href="yjwContent/articleAction_getArticlesByCondition.action">文章管理</a></dd>
+							<dd><a target="iframe" href="yjwContent/acAction_getArticleCategorysByCondition.action">文章分类</a></dd>
+							<dd><a target="iframe" href="yjwContent/adAction_getAdvertisementsByCondition.action">广告管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">标签管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">友情链接</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">广告位</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">模板管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">缓存管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">静态化管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">索引管理</a></dd>
+						</dl>
+						<dl id="marketing">
+							<dt>营销管理</dt>
+							<dd><a target="iframe" href="http://www.baidu.com">促销管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">优惠券管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">SEO设置</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">Sitemap管理</a></dd>
+						</dl>
+						<dl id="statistics">
+							<dt>统计报表</dt>
+							<dd><a target="iframe" href="http://www.baidu.com">访问统计</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">统计设置</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">销售统计</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">销售排行</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">消费排行</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">预存款</a></dd>
+						</dl>
+						<dl id="system">
+							<dt>系统设置</dt>
+							<dd><a target="iframe" href="http://www.baidu.com">系统设置</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">地区管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">支付方式</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">配送方式</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">物流公司</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">支付插件</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">存储插件</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">管理员</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">角色管理</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">发送消息</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">消息列表</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">草稿箱</a></dd>
+							<dd><a target="iframe" href="http://www.baidu.com">日志管理</a></dd>
+						</dl>
+					</td>
+					<td>
+						<iframe id="iframe" frameborder="0" src="index.html" name="iframe"></iframe>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

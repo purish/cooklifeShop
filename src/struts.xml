@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+		"http://struts.apache.org/dtds/struts-2.1.dtd">
+		
+<struts>
+	<!-- 配置Struts2启用动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 配置Struts2请求的扩展名为.action或什么都不加 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 配置Struts2的模式为开发模式：可以打印出更多的详细信息 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置上传文件大小的总开关，设为30MB -->
+	<constant name="struts.multipart.maxSize" value="31457280" />
+	
+	<package name="admin" namespace="/admin" extends="struts-default"></package>
+	
+	<!-- 商品 -->
+	<package name="product" namespace="/admin/yjwProduct" extends="admin">
+	
+		<!-- 商品/品牌 -->
+		<action name="brandAction_*" class="brandAction" method="{1}">
+			<result name="initSaveBrandUiSuccess" type="dispatcher">/admin/yjwProduct/brandEdit.jsp</result>
+			<result name="saveBrandSuccess" type="redirect">/admin/yjwProduct/brandAction_getBrandsByCondition.action</result>
+			<result name="getBrandsByConditionSuccess" type="dispatcher">/admin/yjwProduct/brandList.jsp</result>
+		</action>
+		
+		<!-- 商品/商品规格 -->
+		<action name="spAction_*" class="spAction" method="{1}">
+			<result name="initSaveSpUiSuccess" type="dispatcher">/admin/yjwProduct/specificationEdit.jsp</result>
+			<result name="saveSpSuccess" type="redirect">/admin/yjwProduct/spAction_getSpecificationByCondition.action</result>
+			<result name="getSpsByConditionSuccess" type="dispatcher">/admin/yjwProduct/specificationList.jsp</result>
+		</action>
+		
+		<!-- 商品/商品分类 -->
+		<action name="pcAction_*" class="pcAction" method="{1}">
+			<result name="initSavePcUiSuccess" type="dispatcher">/admin/yjwProduct/productCategoryEdit.jsp</result>
+			<result name="savePcSuccess" type="redirect">/admin/yjwProduct/pcAction_getProductCategoryByCondition.action</result>
+			<result name="getPcsByConditionSuccess" type="dispatcher">/admin/yjwProduct/productCategoryList.jsp</result>
+		</action>
+		
+		<!-- 商品/商品参数 -->
+		<action name="paramAction_*" class="paramAction" method="{1}">
+			<result name="initSaveParamUiSuccess" type="dispatcher">/admin/yjwProduct/parameterEdit.jsp</result>
+			<result name="saveParamSuccess" type="redirect">/admin/yjwProduct/paramAction_getParametersByCondition.action</result>
+			<result name="getParamsByConditionSuccess" type="dispatcher">/admin/yjwProduct/parameterList.jsp</result>
+		</action>
+		
+		<!-- 商品/商品属性 -->
+		<action name="attrAction_*" class="attrAction" method="{1}">
+			<result name="initSaveAttrUiSuccess" type="dispatcher">/admin/yjwProduct/attributeEdit.jsp</result>
+			<result name="saveAttrSuccess" type="redirect">/admin/yjwProduct/attrAction_getAttributesByCondition.action</result>
+			<result name="getAttrsByConditionSuccess" type="dispatcher">/admin/yjwProduct/attributeList.jsp</result>
+		</action>
+		
+		<!-- 商品/商品信息 -->
+		<action name="productAction_*" class="productAction" method="{1}">
+			<result name="initSaveProductUiSuccess" type="dispatcher">/admin/yjwProduct/productEdit.jsp</result>
+			<result name="saveProductSuccess" type="redirect">/admin/yjwProduct/productAction_getProductsByCondition.action</result>
+			<result name="getProductsByConditionSuccess" type="dispatcher">/admin/yjwProduct/productList.jsp</result>
+		</action>
+		
+	</package>
+	
+	
+	<!-- 内容 -->
+	<package name="content" namespace="/admin/yjwContent" extends="admin">
+		
+		<!-- 内容/文章分类 -->
+		<action name="acAction_*" class="acAction" method="{1}">
+			<result name="initSaveAcUiSuccess" type="dispatcher">/admin/yjwContent/articleCategoryEdit.jsp</result>
+			<result name="saveAcSuccess" type="redirect">/admin/yjwContent/acAction_getArticleCategoryByCondition.action</result>
+			<result name="getAcsByConditionSuccess" type="dispatcher">/admin/yjwContent/articleCategoryList.jsp</result>
+		</action>
+		
+		<!-- 内容/文章信息 -->
+		<action name="articleAction_*" class="articleAction" method="{1}">
+			<result name="initSaveArticleUiSuccess" type="dispatcher">/admin/yjwContent/articleEdit.jsp</result>
+			<result name="saveArticleSuccess" type="redirect">/admin/yjwContent/articleAction_getArticlesByCondition.action</result>
+			<result name="getArticlesByConditionSuccess" type="dispatcher">/admin/yjwContent/articleList.jsp</result>
+		</action>
+		
+		<!-- 内容/广告 -->
+		<action name="adAction_*" class="adAction" method="{1}">
+			<result name="initSaveAdUiSuccess" type="dispatcher">/admin/yjwContent/advertisementEdit.jsp</result>
+			<result name="saveAdSuccess" type="redirect">/admin/yjwContent/adAction_getAdvertisementsByCondition.action</result>
+			<result name="getAdsByConditionSuccess" type="dispatcher">/admin/yjwContent/advertisementList.jsp</result>
+		</action>
+		
+		<!-- 内容/导航 -->
+		<action name="navAction_*" class="navAction" method="{1}">
+			<result name="initSaveNavUiSuccess" type="dispatcher">/admin/yjwContent/navigationEdit.jsp</result>
+			<result name="saveNavSuccess" type="redirect">/admin/yjwContent/navAction_getNavigationsByCondition.action</result>
+			<result name="getNavsByConditionSuccess" type="dispatcher">/admin/yjwContent/navigationList.jsp</result>
+		</action>
+		
+		
+	</package>
+	
+</struts>

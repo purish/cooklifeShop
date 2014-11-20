@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.Brand" table="yjw_brand" lazy="true">
+		<id name="id" type="long" column="brand_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="brand_name" />
+		<property name="type" type="integer" column="brand_type" />
+		<property name="order" type="integer" column="brand_order" />
+		<property name="logo" type="string" column="brand_logo" />
+		<property name="url" type="string" column="brand_url" />
+		<property name="introduction" type="string" column="brand_introduction" />
+		<property name="createTime" type="timestamp" column="brand_create_time" />
+		<property name="modifyTime" type="timestamp" column="brand_modify_time" />
+		
+		<!-- 设置品牌与商品分类的多对多映射 -->
+		<bag name="pcs" table="yjw_product_category_brand" cascade="none" inverse="true" 
+				lazy="extra" fetch="select">
+			<key column="pcb_brand_id" />
+			<many-to-many column="pcb_pc_id" class="cn.yjw.product.bean.ProductCategory" />
+		</bag>
+		
+		<!-- 设置品牌与商品的一对多映射 -->
+		<bag name="products" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="p_brand_id" />
+			<one-to-many class="cn.yjw.product.bean.Product" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

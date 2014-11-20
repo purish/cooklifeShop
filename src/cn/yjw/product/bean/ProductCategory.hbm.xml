@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.ProductCategory" table="yjw_product_category" lazy="true">
+		<id name="id" type="long" column="pc_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="pc_name" />
+		<property name="grade" type="integer" column="pc_grade" />
+		<property name="seoTitle" type="string" column="pc_seo_title" />
+		<property name="seoKeywords" type="string" column="pc_seo_keywords" />
+		<property name="seoDescription" type="string" column="pc_seo_description" />
+		<property name="order" type="integer" column="pc_order" />
+		<property name="treePath" type="string" column="pc_tree_path" />
+		<property name="isHot" type="boolean" column="pc_is_hot" />
+		<property name="isNew" type="boolean" column="pc_is_new" />
+		<property name="createTime" type="timestamp" column="pc_create_time" />
+		<property name="modifyTime" type="timestamp" column="pc_modify_time" />
+		
+		<!-- 设置商品分类自关联一对多映射 -->
+		<bag name="childs" cascade="none" inverse="true" lazy="extra" fetch="select" order-by="pc_order ASC">
+			<key column="pc_parent_id" />
+			<one-to-many class="cn.yjw.product.bean.ProductCategory" />
+		</bag>
+		
+		<!-- 设置商品分类自关联多对一映射 -->
+		<many-to-one name="parent" column="pc_parent_id" 
+				class="cn.yjw.product.bean.ProductCategory" 
+				cascade="none" lazy="proxy" fetch="select" />
+				
+		<!-- 设置于商品分类与品牌的多对多映射 -->
+		<bag name="brands" table="yjw_product_category_brand" cascade="none" inverse="false" 
+				lazy="extra" fetch="select">
+			<key column="pcb_pc_id" />
+			<many-to-many column="pcb_brand_id" class="cn.yjw.product.bean.Brand" order-by="brand_order ASC" />
+		</bag>
+		
+		<!-- 设置商品分类与商品参数的一对多映射 -->
+		<bag name="params" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="param_pc_id" />
+			<one-to-many class="cn.yjw.product.bean.Parameter" />
+		</bag>
+		<!-- 设置商品分类与商品属性的一对多映射 -->
+		<bag name="attrs" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="attr_pc_id" />
+			<one-to-many class="cn.yjw.product.bean.Attribute" />
+		</bag>
+		
+		<!-- 设置商品分类与商品的一对多映射 -->
+		<bag name="products" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="p_pc_id" />
+			<one-to-many class="cn.yjw.product.bean.Product" />
+		</bag>
+		
+		
+	</class>
+</hibernate-mapping>

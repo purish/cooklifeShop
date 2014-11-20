@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.Attribute" table="yjw_attribute" lazy="true">
+		<id name="id" type="long" column="attr_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" column="attr_name" />
+		<property name="order" type="integer" column="attr_order" />
+		<property name="createTime" type="timestamp" column="attr_create_time" />
+		<property name="modifyTime" type="timestamp" column="attr_modify_time" />
+		
+		<!-- 设置商品属性与属性值间的一对多映射 -->
+		<bag name="atopts" cascade="none" inverse="true" lazy="extra" fetch="select">
+			<key column="atopt_attr_id" />
+			<one-to-many class="cn.yjw.product.bean.AttributeOption" />
+		</bag>
+		
+		<!-- 设置商品属性与商品分类间的多对一映射关系 -->
+		<many-to-one name="pc" column="attr_pc_id" lazy="proxy" fetch="select"
+				class="cn.yjw.product.bean.ProductCategory" 
+				cascade="none" />
+				
+	</class>
+</hibernate-mapping>

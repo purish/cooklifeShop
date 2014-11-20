@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+* {
+	font: 12px tahoma, Arial, Verdana, sans-serif;
+}
+
+html,body {
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+table.main {
+	height: 100%;
+	width: 100%;
+}
+
+table.main th {
+	background: url("../images/main.gif") repeat-x scroll 0 0
+		rgba(0, 0, 0, 0);
+	height: 60px;
+}
+
+table.main td {
+	vertical-align: top;
+}
+
+table.main .logo {
+	vertical-align: middle;
+	width: 160px;
+}
+
+table.main .nav {
+	float: left;
+	height: 30px;
+	padding-top: 30px;
+	white-space: nowrap;
+	width: 600px;
+}
+
+table.main .nav li {
+	background: url("../images/main.gif") no-repeat scroll right -60px
+		rgba(0, 0, 0, 0);
+	float: left;
+	padding: 0 2px;
+	width: 70px;
+}
+
+table.main .nav li a {
+	color: #488BD1;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 0 6px;
+	text-align: center;
+}
+
+table.main .nav li a:hover,table.main li a.current {
+	border-bottom: 2px solid #0099CC;
+	height: 28px;
+	line-height: 28px;
+}
+
+table.main .link {
+	clear: right;
+	float: right;
+	height: 29px;
+	line-height: 29px;
+	overflow: hidden;
+	text-align: right;
+	white-space: nowrap;
+	width: 240px;
+}
+
+table.main .link a {
+	padding: 0 6px;
+}
+
+table.main .menu {
+	background-color: #F5FAFF;
+	border-right: 1px solid #A3C4D7;
+}
+
+table.main .menu dl {
+	display: none;
+	padding: 0 6px;
+}
+
+table.main .menu .default {
+	display: block;
+}
+
+table.main .menu dt {
+	border-bottom: 1px dashed #B7D3E1;
+	color: #333333;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 10px;
+}
+
+table.main .menu dd a {
+	color: #666666;
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	outline: medium none;
+	padding-left: 10px;
+}
+
+table.main .menu dd a:hover {
+	background-color: #EAF4FF;
+}
+
+table.main .menu dd a.current {
+	background-color: #E4F2FA;
+}
+
+table.main iframe {
+	height: 100%;
+	width: 100%;
+}

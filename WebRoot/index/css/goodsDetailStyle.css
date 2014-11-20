@@ -1,0 +1,332 @@
+@CHARSET "UTF-8";
+
+/*------------------------------ goods-intro ------------------------------*/
+.goodsIntro {
+	border-top: 1px solid #DDDDDD;
+	padding-top: 15px;
+	clear: both;
+}
+
+.goodsIntro .big_img {
+	width: 580px;
+	height: 390px;
+	border: 1px solid #E4E4E4;
+	overflow: hidden;
+	float: left;
+}
+
+.goodsIntro .p-info {
+	width: 395px;
+	overflow: hidden;
+	float: right;
+}
+
+.goodsIntro .p-info .p-name {
+	border-bottom: 1px dotted #CCCCCC;
+	padding-bottom: 10px;
+}
+
+.goodsIntro .p-info .p-name h1 {
+	font: 700 16px/1.5em Arial,Verdana,"microsoft yahei";
+	overflow: hidden;
+}
+
+.goodsIntro .p-info .p-sell {
+	padding: 10px 0 10px 5px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+.goodsIntro .p-info .p-sell li {
+	overflow: hidden;
+	padding: 6px 0;
+}
+
+.goodsIntro .p-info .p-sell .red {
+	color: #E4393C;
+}
+
+.goodsIntro .p-info .p-sell .bold {
+	font-weight: bold;
+}
+
+.goodsIntro .p-info .p-sell .fs22 {
+	font-size: 22px;
+}
+
+.goodsIntro .p-info .p-sell .lh30 {
+	line-height: 30px;
+}
+
+.goodsIntro .p-info .p-sell .tip {
+	width: 60px;
+	height: 18px;
+	line-height: 18px;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #DCDCDC;
+	margin-right: 5px;
+}
+
+.goodsIntro .p-info .callus {
+	background: none repeat scroll 0 0 #FAFAFA;
+	border: 1px solid #D8D8D8;
+	padding: 9px 15px;
+	margin-top: 10px;
+	height: 80px;
+}
+
+/*------------------------------ goods-detail ------------------------------*/
+.goodsDetail {
+	padding-top: 15px;
+	overflow: hidden;
+}
+
+.goodsDetail .left {
+	width: 200px;
+	float: left;
+	overflow: hidden;
+}
+
+.goodsDetail .right {
+	width: 790px;
+	float: right;
+	overflow: visible;
+}
+
+/*------------------------------ goods-detail-left ------------------------------*/
+.goodsDetail .related_sorts_brands {}
+
+.goodsDetail .rank_list {}
+
+.goodsDetail .related_sorts_brands .title h2, 
+.goodsDetail .rank_list .title h2 {
+	font: 15px/16px "microsoft yahei";
+}
+
+.goodsDetail .related_sorts_brands .content {
+	padding: 5px 0 5px 12px;
+}
+
+.goodsDetail .related_sorts_brands .content ul, .goodsMain .rank_list ul {
+	overflow: hidden;
+}
+
+.goodsDetail .related_sorts_brands .content li {
+	width: 82px;
+	height: 18px;
+	float: left;
+	overflow: hidden;
+	padding: 3px 6px 3px 0;
+}
+
+.goodsDetail .rank_list .content {
+	padding: 10px 8px;
+	overflow: hidden;
+}
+
+.goodsDetail .rank_list li {
+	padding: 20px 0;
+	text-align: center;
+	border-top: 1px dotted #DDDDDD;
+	position: relative;
+}
+
+.goodsDetail .rank_list li span {
+	width: 18px;
+	height: 18px;
+	font-size: 10px;
+	line-height: 18px;
+	color: #DDDDDD;
+	background-image: url("../images/icons/rank_bg.png");
+	background-position: -24px 0;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 20px;
+	left: 3px;
+}
+
+.goodsDetail .rank_list li .red {
+	color: #E4393C;
+	background-position: 0 0;
+}
+
+.goodsDetail .rank_list .noBorder {
+	border-top: 0 none;
+}
+
+.goodsDetail .rank_list .p-img {
+	overflow: hidden;
+}
+
+.goodsDetail .rank_list .p-name {
+	overflow: hidden;
+	padding: 7px 3px 0;
+}
+
+.goodsDetail .rank_list .p-price {
+	overflow: hidden;
+}
+
+.goodsDetail .rank_list .p-price strong {
+	color: #E4393C;
+	font-family: verdana;
+}
+
+/*------------------------------ goods-detail-right ------------------------------*/
+
+.goodsDetail .detailPanel {
+	background-image: url("../images/icons/goods_detail_tab.png");
+	background-position: 0 -41px;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	padding-top: 2px;
+}
+
+.goodsDetail .tabTitle {
+	height: 30px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	overflow: visible;
+}
+
+.goodsDetail .tabTitle .tab {
+	height: 30px;
+	overflow: visible;
+	margin-left: -1px;
+}
+
+.goodsDetail .tabTitle .tab li {
+	float: left;
+	text-align: center;
+}
+
+.goodsDetail .tabTitle .tab .current {
+	background-color: #FFFFFF;
+	margin-top: -6px;
+	border-top: 2px solid #E4393C;
+}
+
+.goodsDetail .tabTitle .tab li a {
+	float: left;
+	height: 30px;
+	padding: 0 13px;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/28px "microsoft yahei";
+}
+
+.goodsDetail .tabTitle .tab .current a {
+	height: 34px;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	color: #E4393C;
+	padding: 0 12px;
+	line-height: 34px;
+}
+
+.goodsDetail .tabContent {
+	overflow: hidden;
+}
+
+.goodsDetail .tabContent .p-tab-content {
+	overflow: hidden;
+}
+
+.goodsDetail .p-detail {
+	
+}
+
+.goodsDetail .p-detail .detail-list {
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 0 1px 1px;
+	overflow: hidden;
+	padding: 8px;
+}
+
+.goodsDetail .p-detail .detail-list li {
+	width: 33%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 2px 0;
+	float: left;
+	overflow: hidden;
+}
+
+.goodsDetail .p-detail .detail-content {
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.goodsDetail .p-param {
+	margin-top: 10px;
+}
+
+.goodsDetail .p-param .p-param-table {
+	width: 100%;
+	color: #333333;
+	text-align: left;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.goodsDetail .p-param .p-param-th {
+	height: 32px;
+	font: bold 14px/32px "microsoft yahei";
+	padding-left: 36px;
+	text-align: left;
+}
+
+.goodsDetail .p-param td, .goodsDetail .p-param th {
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #DCDCDC;
+	padding: 0 10px;
+}
+
+.goodsDetail .p-param th {
+	width: 125px;
+	background: none repeat scroll 0 0 #F5FAFE;
+	text-align: right;
+	font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

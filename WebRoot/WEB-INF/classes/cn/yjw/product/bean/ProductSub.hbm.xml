@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.ProductSub" table="yjw_product_sub" lazy="true">
+		<id name="id" type="long" column="psub_id">
+			<generator class="native" />
+		</id>
+		
+		<!-- 设置子商品与商品的多对一映射 -->
+		<many-to-one name="product" column="psub_p_id" lazy="proxy" fetch="select"
+				class="cn.yjw.product.bean.Product" 
+				cascade="none" />
+		
+		<!-- 设置子商品与规格值的多对多映射 -->
+		<bag name="spvs" table="yjw_product_sub_specification_value" cascade="none" inverse="false" 
+				lazy="extra" fetch="select">
+			<key column="psspv_psub_id" />
+			<many-to-many column="psspv_spv_id" class="cn.yjw.product.bean.SpecificationValue" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

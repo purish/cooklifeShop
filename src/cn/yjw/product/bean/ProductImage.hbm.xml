@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.ProductImage" table="yjw_product_image" lazy="true">
+		<id name="id" type="long" column="pimg_id">
+			<generator class="native" />
+		</id>
+		<property name="title" type="string" column="pimg_title" />
+		<property name="order" type="integer" column="pimg_order" />
+		<property name="image" type="string" column="pimg_image" />
+		
+		<!-- 设置商品图片与商品多对一映射 -->
+		<many-to-one name="product" column="pimg_p_id" lazy="proxy" fetch="select" 
+				class="cn.yjw.product.bean.Product" 
+				cascade="none" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.product.bean.AttributeOption" table="yjw_attribute_option" lazy="true">
+		<id name="id" type="long" column="atopt_id">
+			<generator class="native" />
+		</id>
+		<property name="option" type="string" column="atopt_option" />
+		
+		<!-- 设置属性值与属性间的多对一映射关系 -->
+		<many-to-one name="attr" column="atopt_attr_id" lazy="proxy" fetch="select"
+				class="cn.yjw.product.bean.Attribute" 
+				cascade="none" />
+		
+		<!-- 设置属性值与商品间的多对多映射关系 -->
+		<bag name="products" table="yjw_product_attribute_option" cascade="none" inverse="true" 
+				lazy="extra" fetch="select">
+			<key column="patopt_atopt_id" />
+			<many-to-many column="patopt_p_id" class="cn.yjw.product.bean.Product" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>

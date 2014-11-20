@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- 引入外部资源文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverclass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxPoolSize" value="${c3p0.pool.size.max}" />
+		<property name="minPoolSize" value="${c3p0.pool.size.min}" />
+		<property name="initialPoolSize" value="${c3p0.pool.size.ini}" />
+		<property name="acquireIncrement" value="${c3p0.pool.size.increment}" />
+	</bean>
+
+	<!-- 本地会话工厂Bean，Spring整合Hibernate的核心入口 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 为会话工厂Bean配置数据源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 配置Hibernate自身的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<!--<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>-->
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+		<!-- 映射资源位置目录集合 -->
+		<property name="mappingResources">
+			<list>
+				<value>cn/yjw/product/bean/Brand.hbm.xml</value>
+				<value>cn/yjw/product/bean/Specification.hbm.xml</value>
+				<value>cn/yjw/product/bean/SpecificationValue.hbm.xml</value>
+				<value>cn/yjw/product/bean/ProductCategory.hbm.xml</value>
+				<value>cn/yjw/product/bean/Parameter.hbm.xml</value>
+				<value>cn/yjw/product/bean/ParameterItem.hbm.xml</value>
+				<value>cn/yjw/product/bean/Attribute.hbm.xml</value>
+				<value>cn/yjw/product/bean/AttributeOption.hbm.xml</value>
+				<value>cn/yjw/product/bean/Product.hbm.xml</value>
+				<value>cn/yjw/product/bean/ProductImage.hbm.xml</value>
+				<value>cn/yjw/product/bean/ProductSub.hbm.xml</value>
+				<value>cn/yjw/content/bean/ArticleCategory.hbm.xml</value>
+				<value>cn/yjw/content/bean/Article.hbm.xml</value>
+				<value>cn/yjw/content/bean/Advertisement.hbm.xml</value>
+				<value>cn/yjw/content/bean/Navigation.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Hibernate事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" isolation="DEFAULT" />
+			<tx:method name="insert*" propagation="REQUIRED" isolation="DEFAULT" />
+			<tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT" />
+			<tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT" />
+			<tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT" />
+
+			<tx:method name="get*" propagation="REQUIRED" isolation="DEFAULT" read-only="true" />
+			<tx:method name="load*" propagation="REQUIRED" isolation="DEFAULT" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" isolation="DEFAULT" read-only="true" />
+
+			<tx:method name="*" propagation="REQUIRED" isolation="DEFAULT" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置事务切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* *..*Service.*(..))" id="txPointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+	
+	
+	<!-- 商品/品牌管理 -->
+	<bean id="brandDao" class="cn.yjw.product.dao.impl.BrandDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="brandService" class="cn.yjw.product.service.impl.BrandServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="brandDao" ref="brandDao" />
+		<property name="productDao" ref="productDao" />
+		<property name="pcDao" ref="pcDao" />
+	</bean>
+	<bean id="brandAction" class="cn.yjw.product.action.BrandAction" scope="prototype">
+		<property name="brandService" ref="brandService" />
+	</bean>
+	
+	<!-- 商品/规格管理 -->
+	<bean id="spDao" class="cn.yjw.product.dao.impl.SpecificationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="spService" class="cn.yjw.product.service.impl.SpecificationServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="spDao" ref="spDao" />
+		<property name="productDao" ref="productDao" />
+	</bean>
+	<bean id="spAction" class="cn.yjw.product.action.SpecificationAction" scope="prototype">
+		<property name="spService" ref="spService" />
+	</bean>
+	
+	<!-- 商品/商品分类 -->
+	<bean id="pcDao" class="cn.yjw.product.dao.impl.ProductCategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="pcService" class="cn.yjw.product.service.impl.ProductCategoryServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="pcDao" ref="pcDao" />
+		<property name="productService" ref="productService" />
+		<property name="paramService" ref="paramService" />
+		<property name="attrService" ref="attrService" />
+	</bean>
+	<bean id="pcAction" class="cn.yjw.product.action.ProductCategoryAction" scope="prototype">
+		<property name="pcService" ref="pcService" />
+		<property name="brandService" ref="brandService" />
+	</bean>
+	
+	<!-- 商品/商品参数 -->
+	<bean id="paramDao" class="cn.yjw.product.dao.impl.ParameterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="paramService" class="cn.yjw.product.service.impl.ParameterServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="paramDao" ref="paramDao" />
+		<property name="productDao" ref="productDao" />
+	</bean>
+	<bean id="paramAction" class="cn.yjw.product.action.ParameterAction" scope="prototype">
+		<property name="paramService" ref="paramService" />
+		<property name="pcService" ref="pcService" />
+	</bean>
+	
+	<!-- 商品/商品属性 -->
+	<bean id="attrDao" class="cn.yjw.product.dao.impl.AttributeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="attrService" class="cn.yjw.product.service.impl.AttributeServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="attrDao" ref="attrDao" />
+		<property name="productDao" ref="productDao" />
+	</bean>
+	<bean id="attrAction" class="cn.yjw.product.action.AttributeAction" scope="prototype">
+		<property name="attrService" ref="attrService" />
+		<property name="pcService" ref="pcService" />
+	</bean>
+	
+	<!-- 商品/商品信息 -->
+	<bean id="productDao" class="cn.yjw.product.dao.impl.ProductDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="productService" class="cn.yjw.product.service.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="productAction" class="cn.yjw.product.action.ProductAction" scope="prototype">
+		<property name="productService" ref="productService" />
+		<property name="pcService" ref="pcService" />
+		<property name="brandService" ref="brandService" />
+		<property name="spService" ref="spService" />
+		<property name="attrService" ref="attrService" />
+		<property name="paramService" ref="paramService" />
+	</bean>
+	
+	<!-- 内容/文章分类 -->
+	<bean id="acDao" class="cn.yjw.content.dao.impl.ArticleCategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="acService" class="cn.yjw.content.service.impl.ArticleCategoryServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="acDao" ref="acDao" />
+		<property name="articleDao" ref="articleDao" />
+	</bean>
+	<bean id="acAction" class="cn.yjw.content.action.ArticleCategoryAction" scope="prototype">
+		<property name="acService" ref="acService" />
+	</bean>
+	
+	<!-- 内容/文章 -->
+	<bean id="articleDao" class="cn.yjw.content.dao.impl.ArticleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="articleService" class="cn.yjw.content.service.impl.ArticleServiceImpl">
+		<property name="articleDao" ref="articleDao" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="articleAction" class="cn.yjw.content.action.ArticleAction" scope="prototype">
+		<property name="articleService" ref="articleService" />
+		<property name="acService" ref="acService" />
+	</bean>
+	
+	<!-- 内容/广告 -->
+	<bean id="adDao" class="cn.yjw.content.dao.impl.AdvertisementDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="adService" class="cn.yjw.content.service.impl.AdvertisementServiceImpl">
+		<property name="adDao" ref="adDao" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="adAction" class="cn.yjw.content.action.AdvertisementAction" scope="prototype">
+		<property name="adService" ref="adService" />
+	</bean>
+	
+	<!-- 内容/导航 -->
+	<bean id="navDao" class="cn.yjw.content.dao.impl.NavigationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="navService" class="cn.yjw.content.service.impl.NavigationServiceImpl">
+		<property name="navDao" ref="navDao" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="navAction" class="cn.yjw.content.action.NavigationAction" scope="prototype">
+		<property name="navService" ref="navService" />
+	</bean>
+	
+	
+	
+</beans>

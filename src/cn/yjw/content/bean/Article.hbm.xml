@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.yjw.content.bean.Article" table="yjw_article" lazy="true">
+		<id name="id" type="long" column="a_id">
+			<generator class="native" />
+		</id>
+		<property name="title" type="string" column="a_title" />
+		<property name="author" type="string" column="a_author" />
+		<property name="type" type="integer" column="a_type" />
+		<property name="image" type="string" column="a_image" />
+		<property name="content" type="string" column="a_content" />
+		<property name="isPublish" type="boolean" column="a_is_publish" />
+		<property name="isTop" type="boolean" column="a_is_top" />
+		<property name="order" type="integer" column="a_order" />
+		<property name="hits" type="long" column="a_hits" />
+		<property name="seoTitle" type="string" column="a_seo_title" />
+		<property name="seoKeywords" type="string" column="a_seo_keywords" />
+		<property name="seoDescription" type="string" column="a_seo_description" />
+		<property name="createTime" type="timestamp" column="a_create_time" />
+		<property name="modifyTime" type="timestamp" column="a_modify_time" />
+		
+		<!-- 设置商品与商品分类多对一映射 -->
+		<many-to-one name="ac" column="a_ac_id" lazy="proxy" fetch="select" 
+				class="cn.yjw.content.bean.ArticleCategory" 
+				cascade="none" />
+		
+	</class>
+</hibernate-mapping>
